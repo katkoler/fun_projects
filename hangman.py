@@ -6,12 +6,13 @@ def pick_word():
 	with open(word_file) as f:
 		words = list(f)
 
-	# words = ['banana', 'dog']
+	# words = ["banana's", 'dog']
 
 	while True:
 		word = random.choice(words).strip().lower()
 		if len(word)>= 5:
-			return word
+			if word.isalpha():
+				return word
 		else: 
 			print("Sorry, the answer was too easy, picking a new word.")
 
@@ -69,20 +70,13 @@ HANGMANPICS = [''' ''','''
       |
       |
      /|
-=========''','''
-  +---+
-      |
-      |
-      |
-      |
-     /|
 =========''', '''
   +---+
   |   |
       |
       |
       |
-      |
+     /|
 =========''','''
   +---+
   |   |
